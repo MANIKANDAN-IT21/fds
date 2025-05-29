@@ -1,1 +1,45 @@
-<p>restaurant works!</p>
+<div class="container py-4">
+    <!-- Search Bar -->
+    <div class="mb-4">
+      <h2 class="mb-3 text-danger">Restaurants near you</h2>
+      <input 
+        [(ngModel)]="location" 
+        type="text" 
+        class="form-control form-control-lg" 
+        placeholder="Enter location (e.g., Chennai)">
+    </div>
+  
+    <!-- Top Brands Carousel -->
+    <h4 class="text-secondary mb-3">Top Brands</h4>
+    <div id="brandCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+      <div class="carousel-inner d-flex justify-content-start gap-3">
+        <div 
+          class="carousel-item active" 
+          *ngFor="let brand of topBrands; let i = index"
+          [class.active]="i === 0"
+          style="flex: 0 0 auto; width: 100px;"
+        >
+          <img 
+            [src]="brand.img" 
+            [alt]="brand.name" 
+            class="d-block rounded-circle border border-2" 
+            style="width: 80px; height: 80px; object-fit: cover;">
+          <p class="text-center mt-2 small">{{ brand.name }}</p>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Restaurant Listings -->
+    <h4 class="mb-3">Food Delivery Restaurants in {{ location }}</h4>
+    <div class="row">
+      <div class="col-md-4 mb-4" *ngFor="let res of restaurants">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title text-primary">{{ res.name }}</h5>
+            <p class="card-text mb-1">{{ res.cuisine }}</p>
+            <span class="badge bg-success">⭐ {{ res.rating }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

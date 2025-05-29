@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap'); /* For error message font */
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif; /* Set default font */
+    color: #0f172a;
+}
+
+.main-container {
+    display: flex;
+    min-height: 100vh; /* Ensure it takes full viewport height */
+}
+
+.register-container { /* Renamed from login-container for clarity */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    padding: 20px; /* Add some padding for smaller screens */
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px; /* Padding for the form itself */
+    width: 100%; /* Make form container full width of its parent */
+    max-width: 400px; /* Limit max width for better aesthetics on larger screens */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Subtle shadow for form */
+    border-radius: 8px; /* Rounded corners for form */
+    background-color: #fff; /* Ensure form background is white */
+}
+
+.tasty-logo {
+    width: 53px;
+    height: 43px;
+    margin-bottom: 10px; /* Space between logo and heading */
+}
+
+.tasty-heading {
+    font-size: 24px;
+    font-weight: 700;
+    font-family: 'DM Sans';
+    font-style: italic;
+    line-height: 32px;
+    color: #f7931e;
+    margin-bottom: 40px; /* Space before the register image/form */
+}
+
+.small-device-image {
+    width: 387px; /* Original width */
+    height: 387px; /* Original height */
+    max-width: 90%; /* Make it responsive on smaller devices */
+    height: auto; /* Maintain aspect ratio */
+    align-self: center; /* Center it */
+    margin-bottom: 30px; /* Space before the form */
+}
+
+.form-heading {
+    font-size: 32px;
+    font-weight: 500;
+    font-family: 'DM Sans';
+    line-height: 40px;
+    color: #0f172a;
+    align-self: center;
+    margin-bottom: 20px; /* Space after heading */
+}
+
+.form-label {
+    font-size: 12px;
+    font-family: 'DM Sans';
+    font-weight: bold;
+    color: #475569;
+    margin-left: 10px;
+    margin-top: 15px; /* Space above each label */
+    margin-bottom: 5px; /* Space below each label */
+}
+
+.form-input {
+    width: calc(100% - 20px); /* 100% width minus horizontal margins */
+    height: 40px;
+    border: 1px solid #e2e8f0;
+    border-radius: 2px;
+    background-color: #e2e8f0;
+    padding: 0 10px; /* Add padding inside input */
+    margin: 0 10px; /* Consistent horizontal margin */
+    font-size: 16px; /* Make text readable */
+    font-family: 'DM Sans', sans-serif;
+    color: #0f172a;
+}
+
+.form-input::placeholder {
+    color: #94a3b8; /* Placeholder color */
+}
+
+.form-button {
+    background-color: #f7931e;
+    width: calc(100% - 20px);
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid #f7931e;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'DM Sans';
+    line-height: 24px;
+    color: #ffffff;
+    margin: 50px 10px 20px 10px; /* Top margin adjusted */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-button:hover {
+    background-color: #e68310; /* Slightly darker on hover */
+}
+
+.image-container {
+    background-image: url('https://res.cloudinary.com/dghnaymwn/image/upload/v1708671311/karthi/Rectangle_1456_xhc2up.jpg');
+    height: 100vh;
+    width: 40%;
+    background-size: cover;
+    background-position: center; /* Center the background image */
+}
+
+.error-message {
+    align-self: start;
+    font-size: 12px;
+    margin-top: 3px;
+    margin-bottom: 0px;
+    font-family: 'Roboto', sans-serif; /* Keep Roboto for error */
+    line-height: 16px;
+    color: #ff0b37;
+    margin-left: 10px; /* Align with input */
+}
+
+/* Checkbox specific styles */
+.checkbox-container {
+    display: flex;
+    align-items: flex-start; /* Align checkbox and text at the top */
+    margin-top: 20px;
+    margin-left: 10px; /* Align with other form elements */
+    width: calc(100% - 20px);
+}
+
+.form-checkbox {
+    margin-right: 10px;
+    transform: scale(1.2); /* Make checkbox slightly larger */
+    cursor: pointer;
+    flex-shrink: 0; /* Prevent checkbox from shrinking */
+}
+
+.checkbox-label {
+    font-size: 14px;
+    color: #475569;
+    line-height: 1.5; /* Ensure text wraps nicely */
+    flex-grow: 1; /* Allow label to take available space */
+}
+
+.terms-link {
+    color: #f7931e;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.terms-link:hover {
+    text-decoration: underline;
+}
+
+/* Login redirect link */
+.login-redirect {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 20px;
+    color: #475569;
+}
+
+
+/*Media Queries*/
+@media screen and (max-width: 768px) {
+    .image-container {
+        display: none;
+    }
+
+    .tasty-heading {
+        display: none;
+    }
+
+    .tasty-logo {
+        display: none;
+    }
+
+    .register-container {
+        width: 100%;
+        padding: 40px 20px; /* More vertical padding for mobile */
+        justify-content: flex-start; /* Start content from top on mobile */
+    }
+
+    .form-container {
+        width: 100%; /* Full width on small screens */
+        max-width: 100%; /* Remove max-width constraint */
+        box-shadow: none; /* Remove shadow on mobile for full-width form */
+        padding: 0; /* No padding on form container itself, let parent handle */
+        background-color: transparent; /* No background on form container */
+    }
+
+    .form-heading {
+        align-self: flex-start; /* Align heading to the left */
+        margin-left: 10px; /* Align with inputs */
+    }
+
+    .small-device-image {
+        width: 100%; /* Full width image */
+        height: auto;
+        max-width: 387px; /* Keep original max-width if desired or remove */
+        align-self: center;
+        margin-bottom: 30px;
+    }
+
+    .form-input,
+    .form-button {
+        width: 100%; /* Full width inputs and button on mobile */
+        margin: 10px 0; /* Adjust margins */
+    }
+
+    .checkbox-container {
+        width: 100%;
+        margin-left: 0;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .small-device-image {
+        display: none;
+    }
+}
